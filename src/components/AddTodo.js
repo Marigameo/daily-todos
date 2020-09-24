@@ -23,6 +23,7 @@ const AddTodo = ({ dispatch }) => {
                 <button type="submit">
                     Add Todo
         </button>
+                <button onClick={() => dispatch({ type: "SORT_TODOS" })}>Sort</button>
             </form>
         </div>
     )

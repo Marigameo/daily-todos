@@ -5,7 +5,8 @@ import "../styles/wrapper.css";
 import { connect } from "react-redux";
 import ActiveList from "./ActiveList";
 import CompletedList from "./CompletedList";
-import { toggleTodo } from "../actions"
+import { toggleTodo, moveToTop } from "../actions"
+
 class TodoWrapper extends Component {
     componentDidMount() {
         this.props.showTodos()
@@ -14,10 +15,10 @@ class TodoWrapper extends Component {
         return (
             <div className="row">
                 <div className="column">
-                    <ActiveList todos={this.props.todos} toggleTodo={this.props.toggleTodo} />
+                    <ActiveList todos={this.props.todos} toggleTodo={this.props.toggleTodo} moveToTop={this.props.moveToTop} />
                 </div>
                 <div className="column">
-                    <CompletedList todos={this.props.todos} toggleTodo={this.props.toggleTodo} />
+                    <CompletedList todos={this.props.todos} toggleTodo={this.props.toggleTodo} moveToTop={this.props.moveToTop} />
                 </div>
             </div>
         );
@@ -32,7 +33,8 @@ const mapStateToProps = state => {
 const mapDispachToProps = dispatch => {
     return {
         showTodos: () => dispatch({ type: "SHOW_TODOS" }),
-        toggleTodo: (id) => dispatch(toggleTodo(id))
+        toggleTodo: (id) => dispatch(toggleTodo(id)),
+        moveToTop: (id) => dispatch(moveToTop(id)),
     };
 };
 export default connect(
