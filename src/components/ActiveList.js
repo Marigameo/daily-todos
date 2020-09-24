@@ -1,17 +1,14 @@
 import React from 'react'
-
 import Todo from './Todo'
-
-export default function ActiveList(props) {
+export default function ActiveList({ todos, toggleTodo }) {
     return (
-        <div>
+        <>
             <ul>
-                {props.activeTodos.map(todo =>
-                    <Todo
-                        key={todo.id}
-                        {...todo}></Todo>
-                )}
+                {
+                    todos.filter(todo => todo.completed === false).map(todo => <Todo todo={todo} key={todo.id} onClick={() => toggleTodo(todo.id)} />)
+                }
             </ul>
-        </div>
+        </>
     )
 }
+

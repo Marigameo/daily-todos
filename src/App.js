@@ -1,15 +1,12 @@
-import React from 'react';
-
-import './App.css';
+import React from 'react'
 import TodoWrapper from './components/TodoWrapper';
+import AddTodo from './components/AddTodo';
 
-function App() {
+export default function App() {
   return (
-    <div className="App">
-      <h1>Todo App</h1>
+    <div>
+      <AddTodo />
       <TodoWrapper />
     </div>
-  );
+  )
 }
-
-export default App;

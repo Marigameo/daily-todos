@@ -1,9 +1,12 @@
 import React from 'react'
 
-export default function Todo(props) {
+const Todo = ({ todo, onClick }) => {
     return (
-        <div>
-            <li key={props.key}>{props.todo}</li>
-        </div>
+        <>
+            <li key={todo.id} onClick={onClick}>{todo.name}</li>
+        </>
     )
 }
+
+export default Todo;
+

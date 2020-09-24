@@ -1,35 +1,41 @@
-import React, { Component } from 'react'
-import ActiveList from './ActiveList';
-import CompletedList from './CompletedList';
-import '../styles/wrapper.css'
+import React, { Component } from "react";
+import "../styles/wrapper.css";
+
+//its a function that returns higer order compoent
+import { connect } from "react-redux";
+import ActiveList from "./ActiveList";
+import CompletedList from "./CompletedList";
+import { toggleTodo } from "../actions"
 class TodoWrapper extends Component {
-    constructor(props) {
-        super(props)
-
-        this.state = {
-            activeTodos: [
-                { id: 1, todo: 'Go to sleep' },
-                { id: 2, todo: 'Bath' }
-            ],
-            completedTodos: [
-                { id: 3, todo: 'Eat' },
-                { id: 4, todo: 'Have fun' }
-            ]
-        }
+    componentDidMount() {
+        this.props.showTodos()
     }
-
     render() {
         return (
             <div className="row">
                 <div className="column">
-                    <ActiveList activeTodos={this.state.activeTodos} />
+                    <ActiveList todos={this.props.todos} toggleTodo={this.props.toggleTodo} />
                 </div>
                 <div className="column">
-                    <CompletedList completedTodos={this.state.completedTodos} />
+                    <CompletedList todos={this.props.todos} toggleTodo={this.props.toggleTodo} />
                 </div>
             </div>
-        )
+        );
     }
 }
+const mapStateToProps = state => {
+    return {
+        todos: state,
+    };
+};
 
-export default TodoWrapper
+const mapDispachToProps = dispatch => {
+    return {
+        showTodos: () => dispatch({ type: "SHOW_TODOS" }),
+        toggleTodo: (id) => dispatch(toggleTodo(id))
+    };
+};
+export default connect(
+    mapStateToProps,
+    mapDispachToProps
+)(TodoWrapper);
