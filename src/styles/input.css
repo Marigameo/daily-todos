@@ -3,6 +3,7 @@
     align-items: center;
     justify-content: center;
 }
+
 .input-field {
     background-image: url('../assets/add-blue.svg');
     background-size: 18px;
@@ -21,6 +22,7 @@
 .input-field, .input-field:focus {
     text-indent: 30px;
 }
+
 .input-field:focus {
     background-image:url('../assets/add-gray.svg');
     outline: none;
@@ -40,10 +42,12 @@
     font-size: 14px;
     font-weight: 500;
 }
+
 .addBtn {
     background-color: #0082d4;
     margin: 20px;
 }
+
 .sortBtn {
     background-color: #c22a22;
 }

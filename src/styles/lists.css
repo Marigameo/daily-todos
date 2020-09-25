@@ -1,12 +1,13 @@
 .list-title {
     font-size: 20px;
-    color: #8b9d47;
+    color: #8b9da7;
     margin-bottom: 20px;
 }
 
 .lists {
     list-style-type: none;
 }
+
 .list-wrap {
     margin: 12px;
     cursor: pointer;
@@ -15,12 +16,15 @@
 .list-item-active::before {
     background: url("../assets/not-checked.svg") no-repeat;
 }
+
 .list-item-completed::before {
     background: url("../assets/checked.svg") no-repeat;    
 }
+
 .list-item-completed {
     text-decoration: line-through;
 }
+
 .list-item-completed::before , .list-item-active::before{
     content: "";
     display: block;

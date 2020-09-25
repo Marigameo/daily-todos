@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import "../styles/wrapper.css";
 
-//its a function that returns higer order compoent
 import { connect } from "react-redux";
 import ActiveList from "./ActiveList";
 import CompletedList from "./CompletedList";
