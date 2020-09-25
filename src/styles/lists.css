@@ -18,6 +18,9 @@
 .list-item-completed::before {
     background: url("../assets/checked.svg") no-repeat;    
 }
+.list-item-completed {
+    text-decoration: line-through;
+}
 .list-item-completed::before , .list-item-active::before{
     content: "";
     display: block;
