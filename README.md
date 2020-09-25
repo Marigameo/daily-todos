@@ -14,6 +14,7 @@ You can find the working demo on [here](https://daily-todos-app.netlify.app/)
 * List active and completed todos
 * Sort todos
 * Move a todo to top of the list
+* Theme switcher
 
 ## Steps to clone and run the application
 
