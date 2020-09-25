@@ -12,5 +12,5 @@ export const toggleTodo = id => ({
 
 export const moveToTop = id => ({
     type: 'MOVE_TO_TOP',
-    id
+    id,
 })

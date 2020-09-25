@@ -1,0 +1,28 @@
+.list-title {
+    font-size: 20px;
+    color: #8b9d47;
+    margin-bottom: 20px;
+}
+
+.lists {
+    list-style-type: none;
+}
+.list-wrap {
+    margin: 12px;
+    cursor: pointer;
+}
+
+.list-item-active::before {
+    background: url("../assets/not-checked.svg") no-repeat;
+}
+.list-item-completed::before {
+    background: url("../assets/checked.svg") no-repeat;    
+}
+.list-item-completed::before , .list-item-active::before{
+    content: "";
+    display: block;
+    width: 20px;
+    height: 20px;
+    float: left;
+    margin: 5px 5px 0 0;
+}
